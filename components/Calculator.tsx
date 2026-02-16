@@ -30,6 +30,8 @@ export const Calculator: React.FC = () => {
     setLoadingAi(false);
   };
 
+  const WHATSAPP_LINK = "https://wa.me/5573988158615?text=Quero%20ser%20revendedor";
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-4">
       {/* Calculadora de Faturamento */}
@@ -146,7 +148,7 @@ export const Calculator: React.FC = () => {
           </div>
           
           <a 
-            href={getLinkWithParams("https://wa.me/SEUNUMERO")} 
+            href={getLinkWithParams(WHATSAPP_LINK)} 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full text-center bg-neon-green hover:bg-[#00e65c] text-black font-black py-7 rounded-[2rem] text-2xl uppercase tracking-tighter transition-all transform hover:scale-105 active:scale-95 animate-cta shadow-[0_15px_35px_rgba(0,255,102,0.3)]"

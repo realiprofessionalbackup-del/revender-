@@ -61,6 +61,8 @@ const App: React.FC = () => {
     }
   ];
 
+  const WHATSAPP_LINK = "https://wa.me/5573988158615?text=Quero%20ser%20revendedor";
+
   return (
     <div className="min-h-screen selection:bg-neon-green selection:text-black font-sans">
       {/* Header / Nav */}
@@ -75,7 +77,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-6">
             <a href="#calculadora" className="text-sm font-bold hover:text-neon-green transition-colors hidden sm:block">CALCULADORA DE LUCRO</a>
             <a 
-              href={getLinkWithParams("https://wa.me/SEUNUMERO")} 
+              href={getLinkWithParams(WHATSAPP_LINK)} 
               className="bg-neon-green text-black px-4 py-2 rounded-lg text-xs font-black uppercase hover:scale-105 transition-transform"
             >
               COMEÇAR AGORA
@@ -284,7 +286,7 @@ const App: React.FC = () => {
             </h2>
             <p className="text-black font-bold text-xl mb-12 relative z-10 opacity-80">Investimento inicial: Apenas R$ 297,00</p>
             <a 
-              href={getLinkWithParams("https://wa.me/SEUNUMERO")} 
+              href={getLinkWithParams(WHATSAPP_LINK)} 
               className="inline-block bg-black text-white px-12 py-6 rounded-3xl text-2xl font-black uppercase hover:scale-105 transition-all shadow-2xl relative z-10 active:scale-95 animate-cta"
             >
               QUERO COMEÇAR AGORA

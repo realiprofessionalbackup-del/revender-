@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressiva Orgânica Pro - Fature 4k+</title>
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (Script part) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,10 +17,7 @@
     fbq('init', '925071719941602');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=925071719941602&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- End Meta Pixel Code (Script part) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +73,11 @@
 </script>
 </head>
 <body>
+    <!-- Meta Pixel Code (Noscript part - Moved to body to fix build error) -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=925071719941602&ev=PageView&noscript=1"
+    /></noscript>
+    
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
 </body>

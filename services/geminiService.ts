@@ -2,15 +2,21 @@
 import { GoogleGenAI } from "@google/genai";
 
 export class GeminiService {
-  private ai: GoogleGenAI;
+  private ai: GoogleGenAI | null = null;
 
-  constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  private getAI() {
+    if (this.ai) return this.ai;
+    
+    // Verificação segura para evitar erros de ReferenceError no navegador
+    const apiKey = typeof process !== 'undefined' ? (process.env.API_KEY || '') : '';
+    this.ai = new GoogleGenAI({ apiKey });
+    return this.ai;
   }
 
   async getSalesStrategy(targetProfit: number, units: number): Promise<string> {
     try {
-      const response = await this.ai.models.generateContent({
+      const ai = this.getAI();
+      const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `Como coach de vendas, forneça uma dica curta e motivadora (máximo 3 frases) para alguém que deseja vender ${units} unidades de progressiva orgânica profissional para alcançar um faturamento de R$ ${targetProfit}. Foque em como abordar salões ou clientes finais.`,
         config: {
